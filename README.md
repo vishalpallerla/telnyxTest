@@ -278,4 +278,4 @@ You are now one step forward in your journey to becoming a Telnyx Champion, Woho
 - [Telnyx Developer Documentation](https://developers.telnyx.com/docs/v2/messaging)
 - [Ngrok](https://ngrok.com/product)
 - [PyCharm Community edition, Open Source](https://www.jetbrains.com/pycharm/download/)
-- [Markdown Help] (https://dillinger.io/)
+- [Markdown Help](https://dillinger.io/)
