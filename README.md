@@ -1,7 +1,7 @@
 # SMS Auto-Responder Application
 ## _Build a SMS auto-responder With Python, Flask and Telnyx._
 
-Sample web application demonstrating Telnyx API for SMS
+Sample web application demonstrating Telnyx SMS API
 - Receives inbound sms message
 - Checks the text of sms message
 - Responds to the text based on the contents
@@ -15,6 +15,7 @@ At the end of this tutorial you'll have an application that:
     | ------ | ------ |
     | pizza | Chicago pizza is the best |
     | Ice cream | I prefer gelato |
+    
     _For text not matching either the options above, respond with the sentence: “Please send either the word ‘pizza’ or ‘ice cream’ for a different response”_
 
 ## Requirements 
@@ -67,11 +68,12 @@ Ngrok provides a localhost tunnel so that outside services can connect to a serv
 ```
 - Terminal should look something like this:
 ![ngrok](Images/ngrok.PNG)
-- Please note the forwarding URL 
-- At this point you can point your application to generated ngrok URL + path (Example: http://{your-url}.ngrok.io/messaging/inbound).
+- Make a note of the forwarding URL (_you will need it later_)
+- At this point you can point your application to generated ngrok URL + path 
+    (Example: http://{your-url}.ngrok.io/messaging/inbound).
 
- Add the public proxy URL(Forwarding URL) to your Inbound Settings in the Mission Control Portal. To do this, click the edit symbol ✎ next to your Messaging Profile. In the "Inbound Settings" > "Webhook URL" field, paste the forwarding address from ngrok into the Webhook URL field. Add messaging/inbound to the end of the URL to direct the request to the webhook endpoint in your server.
- ![webhook](Images/webhook.PNG)
+ Add the public proxy URL(Forwarding URL) to your Inbound Settings in the Mission Control Portal. To do this, click the edit symbol ✎ next to your Messaging Profile. In the "Inbound Settings" > "Webhook URL" field, paste the forwarding address from ngrok into the Webhook URL field. Add /inbound to the end of the URL to direct the request to the webhook endpoint in your server.
+ ![webhook](Images/webhook.png)
 
 For now you'll leave “Failover URL” blank, but if you'd like to have Telnyx resend the webhook in the case where sending to the Webhook URL fails, you can specify an alternate address in this field.
 
@@ -182,7 +184,7 @@ def outbound_message():
     return Response(status=200)
 ```
 
-Hooray!!! You care almost there. All you need to do now is run your application at port 5000 as follows so that incoming requests can access your application through ngrok tunnel we created before. 
+Hooray!!! You are almost there. All you need to do now is run your application at port 5000 as follows so that incoming requests can access your application through ngrok tunnel we created before. 
 ```py
 if __name__ == "__main__":
     app.run(port=5000)    #Using port 5000 locally to run our web application
@@ -276,4 +278,4 @@ You are now one step forward in your journey to becoming a Telnyx Champion, Woho
 - [Telnyx Developer Documentation](https://developers.telnyx.com/docs/v2/messaging)
 - [Ngrok](https://ngrok.com/product)
 - [PyCharm Community edition, Open Source](https://www.jetbrains.com/pycharm/download/)
-- Markdown Help (https://dillinger.io/)
+- [Markdown Help] (https://dillinger.io/)
