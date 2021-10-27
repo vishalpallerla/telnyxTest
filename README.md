@@ -71,7 +71,7 @@ Ngrok provides a localhost tunnel so that outside services can connect to a serv
 - At this point you can point your application to generated ngrok URL + path (Example: http://{your-url}.ngrok.io/messaging/inbound).
 
  Add the public proxy URL(Forwarding URL) to your Inbound Settings in the Mission Control Portal. To do this, click the edit symbol ✎ next to your Messaging Profile. In the "Inbound Settings" > "Webhook URL" field, paste the forwarding address from ngrok into the Webhook URL field. Add messaging/inbound to the end of the URL to direct the request to the webhook endpoint in your server.
- ![webhook](Images/ngrok.PNG)
+ ![webhook](Images/webhook.PNG)
 
 For now you'll leave “Failover URL” blank, but if you'd like to have Telnyx resend the webhook in the case where sending to the Webhook URL fails, you can specify an alternate address in this field.
 
@@ -104,6 +104,7 @@ Our Flask application will have two routes:
 
 Create a new file named smsResponder.py at where you choose to store your Python project files.
 Within the smsResponder python file, please add the following code:
+
 _Import required dependencies, Load basic Flask application and config file we created_
 ```py
 import telnyx
@@ -268,4 +269,11 @@ Checkpoint: By now, you should have accomplished these
 - [x] Test the application
 - [x] Feel accomplished and pat your back for developing an awesome application
 
-You are now one step ahead on your way to becoming a Telnyx Champion, Wohooo !!!! 
+You are now one step forward in your journey to becoming a Telnyx Champion, Wohooo !!!! 
+
+
+#### REFERENCES:
+- [Telnyx Developer Documentation](https://developers.telnyx.com/docs/v2/messaging)
+- [Ngrok](https://ngrok.com/product)
+- [PyCharm Community edition, Open Source](https://www.jetbrains.com/pycharm/download/)
+- Markdown Help (https://dillinger.io/)
